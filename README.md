@@ -7,6 +7,8 @@ A prototype of an EV grant application journey, built with the [GOV.UK Prototype
 You need the current LTS version of [Node.js](https://nodejs.org/).
 
 ```
+git clone https://github.com/ByronVernon/EV-grant-beta.git ev-grant-beta
+cd ev-grant-beta
 nvm use
 npm install
 npm run dev
