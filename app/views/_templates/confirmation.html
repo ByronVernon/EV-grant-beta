@@ -1,0 +1,20 @@
+njk
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Application complete" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Application submitted",
+      html: "Your reference number<br><strong>EV-000000</strong>"
+    }) }}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">Describe the next steps here.</p>
+
+  </div>
+</div>
+{% endblock %}

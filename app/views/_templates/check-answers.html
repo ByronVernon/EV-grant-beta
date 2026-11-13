@@ -1,0 +1,40 @@
+njk
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Check your answers" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: { text: "Vehicle type" },
+          value: { text: data["vehicleType"] },
+          actions: {
+            items: [
+              {
+                href: "/apply/question-1",
+                text: "Change",
+                visuallyHiddenText: "vehicle type"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form method="post" action="/apply/confirmation">
+      {{ govukButton({ text: "Submit application" }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}

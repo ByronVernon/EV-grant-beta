@@ -6,6 +6,9 @@ node_modules/
 .env
 migrate.log
 
+# Personal tool config
+.claude/settings.local.json
+
 # General ignores
 .DS_Store
 .idea
