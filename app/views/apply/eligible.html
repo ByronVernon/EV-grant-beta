@@ -1,0 +1,46 @@
+njk
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Eligible" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "You may be eligible for a grant"
+        
+      })}}
+
+      <p>
+        Based on the make and model of your car and the address you are applying for, you are
+         eligible to continue to the next stage of application if you would like.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        On the next page, we will ask you to create an account so you can continue your application. 
+      </p>
+
+      <p>
+        We will also ask you to upload evidence that the parking space you are applying for is legal
+         on-street parking and does not obstruct traffic.
+      </p>
+
+      <p>
+        Press continue to start an application. 
+      </p>
+
+      <form method="post" action="/apply/contact-info">
+        {{ govukButton({ text: "Continue" }) }}
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
