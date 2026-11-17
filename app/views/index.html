@@ -6,15 +6,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <h1 class="govuk-heading-l">Electric Vehicle Charger Grant Service</h1>
+    <p>You can use this service to:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Check your eligibility for a grant for installing an electric vehicle (EV) charger outside your home.</li>
+      <li>If you are eligible, begin an application.</li>
+      <li>Check the status of and update any existing applications.</li>
+      <li>Check which installers are approved for receiving the grant.</li>
+    </ul></p>
   </div>
 </div>
+<a href="/apply/question-1" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Start now
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
+<h2 class="govuk-heading-m">Before you start</h2>
+<p>To check your eligibility and apply, you will need to know:
+  <ul class="govuk-list govuk-list--bullet">
+    <li>The address of the property you would like to install the charger at.</li>
+    <li>The registration number of the electric vehicle</li>
+    <li>The make and model of the electric vehicle.</li>
+  </ul></p>
+  <p>You will also need to provide proof (including photographs) that there is legal on-street parking near your home that does not obstruct other vehicles or pedestrians. </p>
+  <p>We will collect your email address so that we can contact you when your application is updated and when action is needed.</p>
 
-{% endblock %}
+  <h2 class="govuk-heading-m">After the installation</h2>
+  <p>Once you have had the charger installed you will need to tell us: </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>The approved installation company who installed your charger.</li>
+    <li>The cost of the installation.</li>
+    <li>The date when the installation took place. </li>
+    <li>Your bank details, so that the grant can be paid to you. </li>
+  </ul>
+  <p>The installer will need to confirm the details of the installation before the grant can be paid.  </p>
+  {% endblock %}
