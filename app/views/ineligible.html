@@ -1,0 +1,32 @@
+
+njk
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Application complete" %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Unfortunately you are not eligible for a grant",
+      classes: "govuk-panel--interruption"
+    }) }}
+
+    {% if (data['country'] != "England") %}
+    <p class="govuk-body">This is because the model of your vehicle is not on the 
+      list of approved vehicles. </p>
+{% endif %}
+
+
+  </div>
+</div>
+{% endblock %}
+
