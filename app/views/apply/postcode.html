@@ -14,17 +14,22 @@ njk
     <form method="post" action="/apply/address">
 
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="event-name">
-            What is your postcode?
-          </label>
-        </h1>
-        <div id="postcode-input-hint" class="govuk-hint">
-          The postcode of the address where you would like to install the charger
-        </div>
-        <input class="govuk-input govuk-input--width-10" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint">
-      </div>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "What is your postcode?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "The postcode of the address where you want to install the charger"
+        },
+        id: "postcode",
+        name: "postcode",
+        value: data['postcode']
+      }) }}
 
       {{ govukButton({ text: "Continue" }) }}
 
