@@ -1,0 +1,67 @@
+njk
+{% extends "layouts/main.html" %}
+
+{% set pageName = "What is your postcode?" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/apply/check-answers1">
+
+
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="event-name">
+          What is your address?
+        </label>
+      </h1>
+      <label class="govuk-label govuk-label--s" for="example-2">
+        Postcode
+      </label>
+      <p>
+        {{ data['postcode'] }}  
+    </p>
+
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    {{ govukSelect({
+      id: "address",
+      name: "address",
+      label: {
+        text: "Select your address"
+      },
+      items: [
+        {
+          value: "choose",
+          text: "Select address",
+          selected: true
+        },
+        {
+          value: "england",
+          text: "England"
+        },
+        {
+          value: "scotland",
+          text: "Scotland"
+        },
+        {
+          value: "wales",
+          text: "Wales"
+        }
+      ]
+    }) }}
+        <p class="govuk-body">
+          <a class="govuk-link" href="/manual-address-entry">My address is not in this list</a>
+        </p>
+
+      {{ govukButton({ text: "Continue" }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
