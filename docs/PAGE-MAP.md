@@ -4,7 +4,9 @@ Update this when you add or change a page.
 
 | URL | Next page |
 | --- | --- |
-| `/` | `/apply/question-1` |
+| `/` | `/apply/triage` |
+|`/apply/triage` | `apply/eligibility-start` |
+| `/apply/eligibility-start`| `` |
 | `/apply/postcode` | `/apply/address` |
 | `/apply/address` | `/apply/check-answers1` |
 | `/apply/check-answers1` | `/apply/eligible` |
