@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Sign in to your EV Grant applicant account" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Sign in to your EV Grant applicant account</h1>
+
+    <form method="post" action="/apply/account-home">
+
+      {{ govukInput({
+        label: { text: "Email address" },
+        id: "signInEmail",
+        name: "signInEmail",
+        value: data["signInEmail"],
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukPasswordInput({
+        label: { text: "Password" },
+        id: "signInPassword",
+        name: "signInPassword",
+        value: data["signInPassword"]
+      }) }}
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="#">Forgotten your password?</a>
+      </p>
+
+      {{ govukButton({ text: "Sign in" }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

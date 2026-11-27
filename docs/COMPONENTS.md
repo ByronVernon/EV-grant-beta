@@ -14,5 +14,6 @@ Use [GOV.UK Design System](https://design-system.service.gov.uk/components/) com
 | `govukFieldset` | Group related fields under one heading |
 | `govukFileUpload` | Upload a file |
 | `govukPasswordInput` | Enter a password |
+| `govukTable` | List of messages |
 
 Add a row when you use a new component.
