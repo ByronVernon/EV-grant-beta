@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Messages" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Messages</h1>
+
+    <p class="govuk-body">This page lists the emails we have sent you about your application.</p>
+
+    {% set messageRows = [] %}
+    {% for message in data["messages"] %}
+      {% set messageRows = (messageRows.push([
+        { text: message.subject },
+        { text: message.dateSent },
+        { html: '<a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> ' + (message.subject | escape) + '</span></a>' }
+      ]), messageRows) %}
+    {% endfor %}
+
+    {{ govukTable({
+      head: [
+        { text: "Subject" },
+        { text: "Date sent" },
+        { text: "Message" }
+      ],
+      rows: messageRows
+    }) }}
+
+  </div>
+</div>
+{% endblock %}
