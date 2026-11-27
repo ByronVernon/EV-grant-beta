@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "What is your name?" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/apply/upload-evidence">
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is your name?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      }) %}
+
+        {{ govukInput({
+          label: { text: "First name" },
+          id: "firstName",
+          name: "firstName",
+          value: data["firstName"],
+          autocomplete: "given-name"
+        }) }}
+
+        {{ govukInput({
+          label: { text: "Last name" },
+          id: "lastName",
+          name: "lastName",
+          value: data["lastName"],
+          autocomplete: "family-name"
+        }) }}
+
+      {% endcall %}
+
+      {{ govukButton({ text: "Continue" }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

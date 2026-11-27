@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Application submitted" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Your application has been submitted",
+      text: "We have sent you a confirmation email"
+    }) }}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">We will review your evidence.</p>
+    <p class="govuk-body">This may take up to 5 working days.</p>
+    <p class="govuk-body">You will get an email when it has been reviewed.</p>
+
+    {{ govukButton({
+      text: "Return to home page",
+      href: "/apply/sign-in"
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

@@ -11,5 +11,8 @@ Use [GOV.UK Design System](https://design-system.service.gov.uk/components/) com
 | `govukSummaryList` | Check your answers |
 | `govukPanel` | Confirmation |
 | `govukErrorSummary` | Errors |
+| `govukFieldset` | Group related fields under one heading |
+| `govukFileUpload` | Upload a file |
+| `govukPasswordInput` | Enter a password |
 
 Add a row when you use a new component.
